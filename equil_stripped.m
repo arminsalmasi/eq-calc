@@ -1,3 +1,4 @@
+clear variables; close all; clc;
 % Test implementation of an equilibrium calculator
 %
 % Equilibrium conditions are P, T and Ni
@@ -15,13 +16,22 @@ T=1000.0;
 P=1.0e5;
 % Number of moles of each component (equilibrium conditions)
 Ni=[0.1 0.9];
-
-
+% Universal Gas constant
+R = 8.314 ; 
 
 % 1. Make an initial guess of the set of variables and the variable values
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+NP = [0.5, 0.5];  % Initial guess on number of moles of phase 1 and 2
 
+for i = 1 : size(NP,2)
+ [G(i),dG(:,i),d2G(:,i),mu(:,i)] = ...
+                              binary_regular_solution(1,Ni(1,i),NP(1,i),T);
+ %[g,dg,d2g] = constraints(nel,nph,nphtot,Ni,status,xp,np)
 
+                          
+end
+
+ 
 % 2. Convergence loop start
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
