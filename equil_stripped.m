@@ -208,7 +208,7 @@ while 1==1
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %% Armin: ToDo: What is a good convergence criteria? 
   if ct1>1
-    if (min(r) - r_hld(ct1-1))<0 || ct1>1000 %% 
+    if (min(r) - r_hld(ct1-1))<0.1 || ct1>1000 %% 
       del_r = (min(r) - r_hld(ct1-1));
       break  
       %% to the main / end of itteration conditions meet
